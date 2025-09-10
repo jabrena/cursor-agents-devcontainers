@@ -6,6 +6,11 @@
     //https://mcr.microsoft.com/v2/vscode/devcontainers/java/tags/list
     //"image": "mcr.microsoft.com/devcontainers/java:21",
     "dockerFile": "Dockerfile",
+    "build": {
+      "args": {
+        "NODE_VERSION": "18"
+      }
+    },
     "hostRequirements": {
       "cpus": 2
     },
@@ -40,6 +45,12 @@
           "github.copilot-chat"
         ]
       }
+    },
+    "containerEnv": {
+      "CURSOR_WORKSPACE": "/home/vscode/workspace"
+    },
+    "remoteEnv": {
+      "PATH": "/home/vscode/.local/bin:${containerEnv:PATH}"
     }
   }
   
